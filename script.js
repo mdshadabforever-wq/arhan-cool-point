@@ -277,4 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // 10. Hero Image Slideshow Slider
+    const heroImages = document.querySelectorAll('.hero-img');
+    let currentImageIndex = 0;
+    
+    if (heroImages.length > 1) {
+        setInterval(() => {
+            heroImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroImages[currentImageIndex].classList.add('active');
+        }, 3500);
+    }
 });
