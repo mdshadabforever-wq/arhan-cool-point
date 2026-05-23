@@ -1728,7 +1728,7 @@ button {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 50px;
+        gap: 40px;
     }
     
     .hero-content {
@@ -1746,21 +1746,26 @@ button {
         width: 100%;
     }
     
+    .hero-visual {
+        margin-top: 30px;
+        width: 100%;
+    }
+    
     .simulator-card-wrapper {
         grid-template-columns: 1fr;
-        gap: 50px;
-        padding: 40px 30px;
+        gap: 40px;
+        padding: 30px 20px;
     }
     
     .calculator-container {
         grid-template-columns: 1fr;
-        gap: 50px;
-        padding: 40px 30px;
+        gap: 40px;
+        padding: 30px 20px;
     }
     
     .gallery-layout {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
     }
     
     .footer-layout {
@@ -1774,7 +1779,22 @@ button {
 
 @media (max-width: 768px) {
     body {
-        padding-bottom: 64px; /* Give room to mobile bottom sticky bar */
+        padding-bottom: 64px;
+    }
+    
+    /* Optimize excessive vertical spacing on mobile screens */
+    .hero,
+    .simulator-section,
+    .services,
+    .calculator-section,
+    .gallery-section,
+    .testimonials,
+    .faqs {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 16px;
     }
     
     .live-dispatch-bar {
@@ -1782,7 +1802,7 @@ button {
     }
     
     .dispatch-cta {
-        display: none; /* Hide fast dispatch cta on small headers */
+        display: none;
     }
     
     .navbar {
@@ -1796,17 +1816,18 @@ button {
     
     .nav-links {
         position: fixed;
-        top: calc(var(--navbar-height) + 34px);
+        top: 114px; /* 44px dispatch + 70px navbar */
         left: -100%;
         width: 100%;
-        height: calc(100vh - var(--navbar-height) - 44px);
+        height: calc(100vh - 114px);
         background-color: rgba(3, 7, 18, 0.98);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(25px);
         flex-direction: column;
-        padding: 60px 0;
-        gap: 32px;
+        padding: 40px 0;
+        gap: 24px;
         transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 999;
     }
     
     .nav-links.active {
@@ -1814,24 +1835,48 @@ button {
     }
     
     .nav-cta {
-        display: none !important; /* Hide call button since sticky bar exists */
+        display: none !important;
     }
     
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
     }
     
     .section-header h2 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .calculator-container {
+        padding: 24px 16px;
+        border-radius: 24px;
+    }
+    
+    .simulator-card-wrapper {
+        padding: 24px 16px;
+        border-radius: 24px;
     }
     
     .mobile-cta-actionbar {
-        display: flex; /* Activate mobile bottom drawer bar */
+        display: flex;
     }
     
     .footer-layout {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     
     .footer-info {
@@ -1851,32 +1896,72 @@ button {
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
     
     .hero-cta-wrapper {
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
     
     .btn {
         width: 100%;
+        padding: 12px 24px;
+        font-size: 0.95rem;
     }
     
     .hero-stats-panel {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 16px;
+        padding-top: 24px;
+    }
+    
+    .stat-num {
+        font-size: 1.45rem;
+    }
+    
+    /* Scaling circular thermostat for small devices like iPhone SE */
+    .thermostat-device {
+        width: 275px;
+        height: 275px;
+        border-width: 6px;
+    }
+    
+    .temperature-display {
+        font-size: 3.1rem;
+    }
+    
+    .thermostat-controls {
+        padding: 6px 18px;
+        bottom: -15px;
+    }
+    
+    .control-btn {
+        width: 32px;
+        height: 32px;
     }
     
     .calc-radio-group {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     
     .calc-panel-output {
-        padding: 24px;
+        padding: 20px 16px;
     }
     
     .photo-card-item {
         grid-template-columns: 1fr;
+    }
+    
+    .photo-details {
+        padding: 16px;
     }
 }
