@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
                               `📍 *Location:* Dharavi / Sion / Bandra (Mumbai)\n\n` +
                               `Please contact me back to confirm my time slot. Thank you!`;
 
-        const waUrl = `https://wa.me/919876543210?text=${encodeURIComponent(customMessage)}`;
+        const waUrl = `https://wa.me/919321399469?text=${encodeURIComponent(customMessage)}`;
         waBookingBtn.setAttribute('href', waUrl);
     }
 
