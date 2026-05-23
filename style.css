@@ -378,6 +378,18 @@ button {
     width: 100%;
 }
 
+/* Elite Navigation Button Styling Override */
+.nav-links a.nav-cta {
+    color: #ffffff !important;
+    padding: 12px 28px;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.nav-links a.nav-cta::after {
+    display: none !important;
+}
+
 .nav-toggle {
     display: none;
     color: white;
